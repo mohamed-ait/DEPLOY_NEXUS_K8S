@@ -3,7 +3,7 @@
 set -x
 
 # Create persistent volume claim 
-kubectl apply -f persistent-volumeCleam.yaml
+kubectl apply -f persistent-volumeClaim.yaml
 
 # create deployment 
 kubectl apply -f deployment.yaml
