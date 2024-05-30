@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
 name: nexus-pvc
 spec:
-storageClassName: nexus-storage
+storageClassName: nfs-client
 accessModes:
 - ReadWriteOnce
 resources:
     requests:
-    storage: 10Gi
+    storage: 5Gi
