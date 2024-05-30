@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-name: nexus-pvc
+  name: nexus-pvc
 spec:
-storageClassName: nfs-client
-accessModes:
-- ReadWriteOnce
-resources:
+  storageClassName: nfs-client
+  accessModes:
+    - ReadWriteOnce
+  resources:
     requests:
-    storage: 5Gi
+      storage: 5Gi
