@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nexus
-  labels:
-    app: nexus
+name: nexus-registry
+labels:
+    app: nexus-registry
 spec:
-  replicas: 2
-  selector:
+replicas: 2
+selector:
     matchLabels:
-      app: nexus
-  template:
+    app: nexus-registry
+template:
     metadata:
     labels:
-        app: nexus
+        app: sonatype-registry
     spec:
     volumes:
     - name: nexus-vol
-      persistentVolumeClaim:
-          claimName: nexus-pvc
+        persistentVolumeClaim:
+        claimName: nexus-pvc
     containers:
     - image: sonatype/nexus3
     name: nexus
@@ -25,5 +25,5 @@ spec:
         - containerPort: 8081
     volumeMounts:
     - name: nexus-vol
-      mountPath: /nexus-data
-      subPath: sonatype
+        mountPath: /nexus-data
+        subPath: sonatype
