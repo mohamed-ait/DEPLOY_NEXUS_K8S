@@ -17,7 +17,7 @@ template:
     volumes:
     - name: nexus-vol
         persistentVolumeClaim:
-        claimName: nexus-pvc
+          claimName: nexus-pvc
     containers:
     - image: sonatype/nexus3
     name: nexus
